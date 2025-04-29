@@ -19,27 +19,28 @@ body {
       box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1); 
     }
     
-    .aviso-piscando {
-      background-color: #b85c5c;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 9999;
-      animation: piscar 2s infinite;
-    }
+.aviso-piscando {
+  background-color: #b85c5c;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 9999;
+  animation: piscar 1s infinite;
+}
 
-    @keyframes piscar {
-      0%, 100% { opacity: 1;}
-      50% { opacity: 0;}
-    }
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
-    body {
-      margin-top: 50px;
-    }
+body {
+  margin-top: 50px; 
+}
 
     .container {
       max-width: 300px;
