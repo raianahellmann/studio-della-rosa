@@ -27,9 +27,9 @@ body {
     }
     
     .profile-img {
-      width: 160px;
+      width: 150px;
       aspect-ratio: 1;
-      border-radius: 50%;
+      border-radius: 40%;
     }
   
     
