@@ -1,0 +1,75 @@
+
+
+body {
+    font-family: 'Saira', sans-serif;
+      text-align: center;
+      background: #fff8f5;
+      color: #471919;
+    }
+  
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #b85c5c;
+      text-align: center;
+      color: black;
+      font-size: 13px;
+      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1); 
+    }
+    
+    .container {
+      max-width: 300px;
+      margin: 100px auto;
+      padding: 10px 10px;
+      
+    }
+    
+    .profile-img {
+      width: 160px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+  
+    
+    .links a {
+      display: block;
+      position: relative;
+      margin: 10px 0;
+      padding: 12px;
+      background: transparent;
+      color: #471919;
+      text-decoration: none;
+      border: 2px solid #b85c5c;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.3s ease;
+      z-index: 1;
+      box-shadow: 0 0 10px #b85c5c;
+      animation: pulse-glow 2s infinite;
+    }
+    
+    .links a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #b85c5c, transparent);
+      animation: move-glow 2s infinite linear;
+      z-index: -1;
+      opacity: 0.4;
+    }
+    
+    @keyframes move-glow {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    
+  
