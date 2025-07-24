@@ -1,36 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;600&display=swap');
 
-
+/* ===== Estilo base ===== */
 body {
-    font-family: 'Saira', sans-serif;
-      text-align: center;
-      background: #fff8f5;
-      color: #471919;
-    }
-  
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #b85c5c;
-      text-align: center;
-      color: black;
-      font-size: 13px;
-      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1); 
-    }
-    
-.aviso-piscando {
-  background-color: #b85c5c;
-  color: white;
+  font-family: 'Saira', sans-serif;
   text-align: center;
-  padding: 10px;
+  background: #fff8f5;
+  color: #471919;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* espaço para o aviso fixo */
+}
+
+/* ===== Aviso fixo piscando no topo ===== */
+.aviso-piscando {
+  background-color: #d76d6d; /* Tom rosa mais suave */
+  color: white;
+  padding: 15px; /* Aumentado para mais conforto */
   font-weight: bold;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
-  z-index: 9999;
+  width: 100%;
+  z-index: 999;
   animation: piscar 1s infinite;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
 }
 
 @keyframes piscar {
@@ -38,61 +31,104 @@ body {
   50% { opacity: 0; }
 }
 
-body {
-  margin-top: 50px; 
+/* ===== Rodapé fixo elegante ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d76d6d; /* Tom rosa mais suave */
+  color: black;
+  font-size: 14px; /* Aumentado para melhor legibilidade */
+  text-align: center;
+  padding: 10px 0; /* Aumentado para mais conforto */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
 }
 
-    .container {
-      max-width: 300px;
-      margin: 100px auto;
-      padding: 10px 10px;
-      
-    }
-    
-    .profile-img {
-      width: 150px;
-      aspect-ratio: 1;
-      border-radius: 40%;
-    }
-  
-    
-    .links a {
-      display: block;
-      position: relative;
-      margin: 10px 0;
-      padding: 12px;
-      background: transparent;
-      color: #471919;
-      text-decoration: none;
-      border: 2px solid #b85c5c;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: 0.3s ease;
-      z-index: 1;
-      box-shadow: 0 0 10px #b85c5c;
-      animation: pulse-glow 2s infinite;
-    }
-    
-    .links a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, #b85c5c, transparent);
-      animation: move-glow 2s infinite linear;
-      z-index: -1;
-      opacity: 0.4;
-    }
-    
-    @keyframes move-glow {
-      0% {
-        transform: translateX(-100%);
-      }
-      100% {
-        transform: translateX(100%);
-      }
-    }
-    
-  
+/* ===== Container central ===== */
+.container {
+  max-width: 360px; /* Aumentado para mais espaço */
+  margin: 80px auto;
+  padding: 25px; /* Aumentado para mais conforto */
+  border-radius: 10px; /* Bordas arredondadas */
+  background: rgba(255, 255, 255, 0.9); /* Fundo levemente transparente */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+/* ===== Imagem do perfil ===== */
+.profile-img {
+  width: 160px; /* Aumentado para melhor visualização */
+  aspect-ratio: 1;
+  border-radius: 50%; /* Bordas completamente arredondadas */
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* ===== Links estilizados ===== */
+.links a {
+  display: block;
+  position: relative;
+  margin: 15px 0; /* Aumentado para espaçamento */
+  padding: 15px; /* Aumentado para mais conforto */
+  background: transparent;
+  color: #471919;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #d76d6d; /* Tom rosa mais suave */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(215, 109, 109, 0.4); /* Sombra mais pronunciada */
+  overflow: hidden;
+}
+
+/* Efeito ao passar o mouse */
+.links a:hover {
+  background-color: #d76d6d; /* Tom rosa mais suave */
+  color: #fff;
+  transform: scale(1.05); /* Aumentado para um efeito mais pronunciado */
+}
+
+/* Efeito de brilho em movimento */
+.links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(215, 109, 109, 0.8), transparent); /* Tom rosa mais suave */
+  animation: move-glow 2s infinite linear;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+@keyframes move-glow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    margin-top: 90px;
+    padding: 15px; /* Ajustado para melhor responsividade */
+  }
+
+  .links a {
+    font-size: 16px; /* Aumentado para melhor legibilidade */
+    padding: 12px; /* Ajustado para melhor responsividade */
+  }
+
+  .profile-img {
+    width: 130px; /* Ajustado para melhor responsividade */
+  }
+
+  footer {
+    font-size: 13px; /* Ajustado para melhor responsividade */
+  }
+}
